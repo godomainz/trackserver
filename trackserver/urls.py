@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from user import views as UserViews
+from track import views as TrackView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/user/', include('user.urls')),
-    path('api/tracks/', include('track.urls')),
+    path('api/track/', include('track.urls')),
+    path('api/signup/', UserViews.CreateUserView.as_view(), name='signup'),
+    path('api/signin/', UserViews.CreateTokenView.as_view(), name='signin')
 ]
