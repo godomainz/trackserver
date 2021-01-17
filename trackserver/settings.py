@@ -24,7 +24,7 @@ SECRET_KEY = 'p-qe3bgw&_-h6c7)!yai@(2@3=p)f*jqtf+4%iw=(+(9cds31q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'core',
     'user',
-    'track'
+    'track',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'trackserver.urls'
@@ -118,3 +120,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'core.User'
+CORS_ALLOW_ALL_ORIGINS = True
