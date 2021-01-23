@@ -1,6 +1,4 @@
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from rest_framework import viewsets, mixins, status
+from rest_framework import viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
@@ -25,6 +23,7 @@ class BaseTrackViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.Cr
 
     def perform_create(self, serializer):
         """Create a new object"""
+        print("perform create")
         serializer.save(user=self.request.user)
 
 

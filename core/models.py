@@ -40,7 +40,7 @@ class Track(models.Model):
                              on_delete=models.CASCADE
                              )
 
-    location = models.CharField(max_length=2000,blank=True)
+    locations = models.CharField(max_length=2000,blank=True)
 
     def __str__(self):
         return self.name
