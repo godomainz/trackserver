@@ -6,8 +6,8 @@ import json
 class TrackSerializer(serializers.ModelSerializer):
     """Serializer for Tag objects"""
     locations = serializers.JSONField()
-
+    
     class Meta:
         model = Track
-        fields = ('name', 'locations')
+        fields = ('id','name', 'locations')
         # fields = 'email'
